@@ -1,11 +1,22 @@
 package classes;
 
 public class Person {
-    public Person(String name) {
-        System.out.println("Name is " + name);
-    }
+    private String firstName;
+    private String lastName;
 
     public Person(String firstName, String lastName) {
-        System.out.println("First name is " + firstName + ", last name is " + lastName);
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+
+    class NameFormatter {
+        public String getFormatted() {
+            return "Name is " + firstName + ", last name is " + lastName;
+        }
+    }
+
+    public void printFormattedName() {
+        String formattedName = new NameFormatter().getFormatted();
+        System.out.println(formattedName);
     }
 }
