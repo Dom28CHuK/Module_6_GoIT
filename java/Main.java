@@ -1,13 +1,16 @@
-import classes.Hero;
+import classes.BFG;
 
 public class Main {
     public static void main(String[] args) {
-        Hero hero = new Hero("Stranger", -250);
+        System.out.println(new BFG(10000, 300, "ExtraGun"));
 
-        //Expect Stranger
-        System.out.println(hero.getName());
+        //BFG, ammo: 5000, damage: 200
+        System.out.println(new BFG(5000, 200));
 
-        //Expect 50
-        System.out.println(hero.getHp());
+        //BFG, ammo: 2000, damage: 50
+        System.out.println(new BFG(2000));
+
+        //BFG, ammo: 1000, damage: 50
+        System.out.println(new BFG());
     }
 }
