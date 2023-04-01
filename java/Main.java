@@ -2,12 +2,12 @@ import classes.Hero;
 
 public class Main {
     public static void main(String[] args) {
-        Hero hero = new Hero();
+        Hero hero = new Hero("Stranger", -250);
 
-        //Expect Paratrooper
+        //Expect Stranger
         System.out.println(hero.getName());
 
-        //Expect 100
+        //Expect 50
         System.out.println(hero.getHp());
     }
 }
