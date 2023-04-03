@@ -1,16 +1,25 @@
-import classes.Distance;
-import classes.RectangleArea;
+import classes.QuarkeTrack;
 
 public class Main {
     public static void main(String[] args) {
-//        System.out.println(new Distance(10, 10, 20, 20).getDistance());
-//
-//        //Expect 23
-//        System.out.println(new Distance(10, 10, 27, 25).getDistance());
+        int[] track1Data = {1, 3, 5};
+        int[] track2Data = {3, 5, 4};
+        int[] track3Data = {1, 5, 3};
 
-        int[] coords = {2, 2, 12, 12};
+        QuarkeTrack track1 = new QuarkeTrack(track1Data);
+        QuarkeTrack track2 = new QuarkeTrack(track2Data);
+        QuarkeTrack track3 = new QuarkeTrack(track3Data);
 
-        //Expect 100
-        System.out.println(new RectangleArea(coords).getArea());
+        //false
+        System.out.println(track1.equals(track2));
+
+        //true
+        System.out.println(track1.equals(track3));
+
+        //Can be true or false
+        System.out.println(track1.hashCode() == track2.hashCode());
+
+        //true
+        System.out.println(track1.hashCode() == track3.hashCode());
     }
 }
