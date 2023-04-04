@@ -11,6 +11,14 @@ public class Level {
         this.points = points;
     }
 
+    public int calculateLevelHash() {
+        int hash = 0;
+        for (Point point : points) {
+            hash += point.getX() * point.getY();
+        }
+        return hash;
+    }
+
     public static class Point {
         private int x;
         private int y;
