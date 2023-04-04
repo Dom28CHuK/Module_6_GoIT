@@ -3,11 +3,11 @@ package classes;
 import java.util.Arrays;
 
 public class Level {
-    private String levelName;
+    private LevelInfo levelInfo;
     private Point[] points;
 
-    public Level(String levelName, Point[] points) {
-        this.levelName = levelName;
+    public Level(LevelInfo levelInfo, Point[] points) {
+        this.levelInfo = levelInfo;
         this.points = points;
     }
 
@@ -29,8 +29,28 @@ public class Level {
         }
     }
 
+    public static class LevelInfo {
+        private String name;
+        private String difficulty;
+
+        public LevelInfo(String name, String difficulty) {
+            this.name = name;
+            this.difficulty = difficulty;
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public String getDifficulty() {
+            return difficulty;
+        }
+    }
+
     @Override
     public String toString() {
-        return "Quarke level, name is " + levelName + ", point count is " + points.length;
+        return "Quarke level, name is " + levelInfo.name +
+                ", difficulty is " + levelInfo.difficulty +
+                ", point count is " + points.length;
     }
 }
