@@ -1,21 +1,20 @@
-import classes.Rectangle;
+import classes.TargetFinder;
+
+import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
-        Rectangle r1 = new Rectangle(10, 5);
-        Rectangle r2 = new Rectangle(3, 7);
-        Rectangle r3 = new Rectangle(10, 15);
+        int[] aiCoords = {10, 10};
+        int[][] targets = {
+                {20, 20},
+                {15, 14},
+                {30, 5}
+        };
 
-        //false
-        System.out.println(r1.canPlaceInto(r2));
+        TargetFinder targetFinder = new TargetFinder();
+        int[] nearestTarget = targetFinder.findTarget(aiCoords, targets);
 
-        //true
-        System.out.println(r1.canPlaceInto(r3));
-
-        //true
-        System.out.println(r2.canPlaceInto(r3));
-
-        //false
-        System.out.println(r3.canPlaceInto(r2));
+        //Expect [15, 14]
+        System.out.println(Arrays.toString(nearestTarget));
     }
 }
