@@ -1,6 +1,7 @@
 package classes;
 
 import java.util.Arrays;
+import java.util.Objects;
 
 public class QuarkeTrack {
     private int[] lines;
@@ -9,15 +10,28 @@ public class QuarkeTrack {
         this.lines = lines;
     }
 
+    public int getTotalDistance() {
+        int sum = 0;
+        for (int line : lines) {
+            sum += line;
+        }
+        return sum;
+    }
+
     @Override
-    public boolean equals(Object o) {
-        if (o == null || getClass() != o.getClass()) return false;
-        QuarkeTrack that = (QuarkeTrack) o;
-        return Arrays.equals(lines, that.lines);
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        QuarkeTrack that = (QuarkeTrack) obj;
+        return getTotalDistance() == that.getTotalDistance();
     }
 
     @Override
     public int hashCode() {
-        return Arrays.hashCode(lines);
+        return Objects.hash(getTotalDistance());
     }
 }
