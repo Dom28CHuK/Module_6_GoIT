@@ -1,4 +1,5 @@
 import classes.GameMenu;
+import classes.LevelLoader;
 
 public class Main {
     public static void main(String[] args) {
@@ -12,5 +13,10 @@ public class Main {
 
         //exit
         menu.act(new GameMenu.Exit());
+
+        LevelLoader levelLoader = new LevelLoader();
+
+        //Loading level Startlevel ...
+        System.out.println(levelLoader.load("StartLevel"));
     }
 }
