@@ -1,22 +1,23 @@
-import classes.ArrayWorker;
-import classes.AvgDamageCalculator;
+import classes.AIPlayer;
 
 public class Main {
     public static void main(String[] args) {
-//        //5
-//        System.out.println(new AvgDamageCalculator().calculateAvg(new int[] {2, 4, 6, 8}));
-//
-//        //0
-//        System.out.println(new AvgDamageCalculator().calculateAvg(new int[0]));
+        AIPlayer player = new AIPlayer();
 
-        int[] array = {1, 2, 3};
+        //Ok value
+        try {
+            player.setHp(50);
+            System.out.println("Ok value");
+        } catch (IllegalArgumentException e) {
+            System.out.println("Invalid value");
+        }
 
-        //value is 1
-        //index is 0
-        new ArrayWorker().printElement(array, 0);
-
-        //wrong index
-        //index is 10
-        new ArrayWorker().printElement(array, 10);
+        //Invalid value
+        try {
+            player.setHp(-1);
+            System.out.println("Ok value");
+        } catch (IllegalArgumentException e) {
+            System.out.println("Invalid value");
+        }
     }
 }
