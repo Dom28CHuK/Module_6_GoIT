@@ -1,23 +1,11 @@
 import classes.AIPlayer;
+import classes.TotalScore;
 
 public class Main {
     public static void main(String[] args) {
-        AIPlayer player = new AIPlayer();
+        int[] score = {10, 20, 100};
 
-        //Ok value
-        try {
-            player.setHp(50);
-            System.out.println("Ok value");
-        } catch (IllegalArgumentException e) {
-            System.out.println("Invalid value");
-        }
-
-        //Invalid value
-        try {
-            player.setHp(-1);
-            System.out.println("Ok value");
-        } catch (IllegalArgumentException e) {
-            System.out.println("Invalid value");
-        }
+        //130
+        System.out.println(new TotalScore().sum(score));
     }
 }
