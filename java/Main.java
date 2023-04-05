@@ -18,5 +18,8 @@ public class Main {
 
         //Loading level Startlevel ...
         System.out.println(levelLoader.load("StartLevel"));
+
+        System.out.println(LevelLoader.getInstance().load("StartLevel"));
+        System.out.println(LevelLoader.getInstance() == LevelLoader.getInstance());
     }
 }
