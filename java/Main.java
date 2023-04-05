@@ -1,8 +1,11 @@
-import classes.TexturePool;
+import classes.AvgDamageCalculator;
 
 public class Main {
     public static void main(String[] args) {
-        //Get texture MainHero
-        System.out.println(TexturePool.getInstance().getTexture("MainHero"));
+        //5
+        System.out.println(new AvgDamageCalculator().calculateAvg(new int[] {2, 4, 6, 8}));
+
+        //0
+        System.out.println(new AvgDamageCalculator().calculateAvg(new int[0]));
     }
 }
