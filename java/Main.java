@@ -1,11 +1,22 @@
-import classes.AIPlayer;
-import classes.TotalScore;
+import classes.Level;
+import classes.LevelLoader;
+import classes.LevelTooBigException;
 
 public class Main {
     public static void main(String[] args) {
-        int[] score = {10, 20, 100};
+        //Level loaded
+        try {
+            new LevelLoader().load(new Level(10, 20));
+        } catch (LevelTooBigException ex) {
+            System.out.println("Level too big");
+        }
 
-        //130
-        System.out.println(new TotalScore().sum(score));
+        //Level too big
+        try {
+            new LevelLoader().load(new Level(10000, 2000));
+        } catch (LevelTooBigException ex) {
+            System.out.println("Level too big");
+        }
+
     }
 }
